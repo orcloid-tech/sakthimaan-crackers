@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf6ef;
-  --foreground: #241009;
+  --background: #f6f1fb;
+  --foreground: #1c1032;
 
-  --maroon-950: #1c0508;
-  --maroon-900: #350a10;
-  --maroon-800: #4d0f17;
-  --maroon-700: #6b1420;
-  --maroon-600: #8a1a28;
+  --night-950: #0a0620;
+  --night-900: #150b34;
+  --night-800: #221149;
+  --night-700: #32186a;
+  --night-600: #472090;
 
-  --gold-300: #f4d78b;
-  --gold-400: #eec25a;
-  --gold-500: #d9a441;
-  --gold-600: #b9822e;
+  --flame-200: #ffe4c2;
+  --flame-300: #ffcf94;
+  --flame-400: #ff9d52;
+  --flame-500: #ff4fa3;
+  --flame-600: #c81f8a;
 
-  --cream: #fdf8ee;
+  --pink-400: #ff6fc7;
+  --orange-400: #ff8a4d;
+
+  --cream: #f8f2ff;
 }
 
 @theme inline {
@@ -25,16 +29,20 @@
   --font-display: var(--font-playfair);
   --font-tamil: var(--font-tamil);
 
-  --color-maroon-950: var(--maroon-950);
-  --color-maroon-900: var(--maroon-900);
-  --color-maroon-800: var(--maroon-800);
-  --color-maroon-700: var(--maroon-700);
-  --color-maroon-600: var(--maroon-600);
+  --color-night-950: var(--night-950);
+  --color-night-900: var(--night-900);
+  --color-night-800: var(--night-800);
+  --color-night-700: var(--night-700);
+  --color-night-600: var(--night-600);
 
-  --color-gold-300: var(--gold-300);
-  --color-gold-400: var(--gold-400);
-  --color-gold-500: var(--gold-500);
-  --color-gold-600: var(--gold-600);
+  --color-flame-200: var(--flame-200);
+  --color-flame-300: var(--flame-300);
+  --color-flame-400: var(--flame-400);
+  --color-flame-500: var(--flame-500);
+  --color-flame-600: var(--flame-600);
+
+  --color-pink-400: var(--pink-400);
+  --color-orange-400: var(--orange-400);
 
   --color-cream: var(--cream);
 }
@@ -53,8 +61,8 @@ body {
   font-family: var(--font-tamil), sans-serif;
 }
 
-.text-gold-gradient {
-  background: linear-gradient(120deg, #f7e3a1 0%, #d9a441 45%, #b9822e 75%, #f4d78b 100%);
+.text-flame-gradient {
+  background: linear-gradient(120deg, #ffd9a8 0%, #ff6fc7 40%, #e2299b 70%, #ffb877 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -72,7 +80,7 @@ body {
 }
 
 .card-shadow {
-  box-shadow: 0 1px 2px rgba(28, 5, 8, 0.04), 0 8px 24px -8px rgba(28, 5, 8, 0.12);
+  box-shadow: 0 1px 2px rgba(10, 6, 32, 0.05), 0 8px 24px -8px rgba(34, 17, 73, 0.16);
 }
 
 @keyframes sparkle-pulse {
@@ -106,8 +114,8 @@ body {
 }
 
 ::selection {
-  background: var(--gold-400);
-  color: var(--maroon-950);
+  background: var(--flame-400);
+  color: var(--night-950);
 }
 
 /* Thin gold scrollbar for horizontal chip rows */
@@ -115,7 +123,7 @@ body {
   height: 6px;
 }
 .chip-scroll::-webkit-scrollbar-thumb {
-  background: var(--gold-500);
+  background: var(--flame-500);
   border-radius: 999px;
 }
 .chip-scroll::-webkit-scrollbar-track {

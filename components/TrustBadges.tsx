@@ -30,13 +30,13 @@ export default function TrustBadges() {
         {badges.map(({ icon: Icon, title, desc }) => (
           <div
             key={title}
-            className="rounded-2xl border border-maroon-800/10 bg-white p-4 card-shadow sm:p-5"
+            className="rounded-2xl border border-night-800/10 bg-white p-4 card-shadow sm:p-5"
           >
-            <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-maroon-800/10 text-maroon-800">
+            <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-night-800/10 text-night-800">
               <Icon className="h-5 w-5" />
             </span>
-            <p className="text-sm font-semibold text-maroon-950">{title}</p>
-            <p className="mt-1 text-xs leading-relaxed text-maroon-950/60">{desc}</p>
+            <p className="text-sm font-semibold text-night-950">{title}</p>
+            <p className="mt-1 text-xs leading-relaxed text-night-950/60">{desc}</p>
           </div>
         ))}
       </div>

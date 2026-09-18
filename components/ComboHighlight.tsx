@@ -8,16 +8,16 @@ export default function ComboHighlight() {
   if (!combos || !gifts) return null;
 
   return (
-    <section id="combos" className="bg-maroon-950/[0.03] py-14">
+    <section id="combos" className="bg-night-950/[0.03] py-14">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h2 className="font-display text-3xl font-bold text-maroon-950">Ready-Made Family Combos</h2>
-            <p className="font-tamil mt-2 text-sm text-maroon-700/70">குடும்பத்திற்கான காம்போ &amp; கிப்ட் பாக்ஸ்</p>
+            <h2 className="font-display text-3xl font-bold text-night-950">Ready-Made Family Combos</h2>
+            <p className="font-tamil mt-2 text-sm text-night-700/70">குடும்பத்திற்கான காம்போ &amp; கிப்ட் பாக்ஸ்</p>
           </div>
           <Link
             href="/products?cat=combo-packs"
-            className="text-sm font-semibold text-maroon-800 hover:text-maroon-600"
+            className="text-sm font-semibold text-night-800 hover:text-night-600"
           >
             See all combos →
           </Link>

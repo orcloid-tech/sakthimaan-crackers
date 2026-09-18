@@ -26,16 +26,16 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="mx-auto flex max-w-lg flex-col items-center px-4 py-24 text-center">
-        <span className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-maroon-800/10 text-maroon-800">
+        <span className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-night-800/10 text-night-800">
           <CartIcon className="h-7 w-7" />
         </span>
-        <h1 className="font-display text-2xl font-bold text-maroon-950">Your enquiry list is empty</h1>
-        <p className="mt-2 text-sm text-maroon-950/60">
+        <h1 className="font-display text-2xl font-bold text-night-950">Your enquiry list is empty</h1>
+        <p className="mt-2 text-sm text-night-950/60">
           Browse our full price list and add the crackers you&apos;d like to enquire about.
         </p>
         <Link
           href="/products"
-          className="mt-6 rounded-full bg-maroon-800 px-6 py-3 text-sm font-semibold text-gold-200 transition-colors hover:bg-maroon-700"
+          className="mt-6 rounded-full bg-night-800 px-6 py-3 text-sm font-semibold text-flame-200 transition-colors hover:bg-night-700"
         >
           Browse Price List
         </Link>
@@ -46,8 +46,8 @@ export default function CartPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 pb-32 sm:px-6">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="font-display text-3xl font-bold text-maroon-950">My Enquiry List</h1>
-        <button onClick={clear} className="text-sm font-medium text-maroon-700/70 hover:text-maroon-800">
+        <h1 className="font-display text-3xl font-bold text-night-950">My Enquiry List</h1>
+        <button onClick={clear} className="text-sm font-medium text-night-700/70 hover:text-night-800">
           Clear all
         </button>
       </div>
@@ -56,20 +56,20 @@ export default function CartPage() {
         {items.map(({ key, qty, product }) => (
           <div
             key={key}
-            className="flex items-center gap-3 rounded-2xl border border-maroon-800/10 bg-white p-3 card-shadow sm:p-4"
+            className="flex items-center gap-3 rounded-2xl border border-night-800/10 bg-white p-3 card-shadow sm:p-4"
           >
             <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-semibold text-maroon-950">{product.name}</p>
-              <p className="font-tamil truncate text-xs text-maroon-700/60">{product.nameTa}</p>
-              <p className="mt-1 text-xs text-maroon-950/50">
+              <p className="truncate text-sm font-semibold text-night-950">{product.name}</p>
+              <p className="font-tamil truncate text-xs text-night-700/60">{product.nameTa}</p>
+              <p className="mt-1 text-xs text-night-950/50">
                 {product.per} · ₹{product.offer} each
               </p>
             </div>
 
-            <div className="flex items-center gap-1.5 rounded-xl border border-maroon-800/15 bg-maroon-950/5 p-1">
+            <div className="flex items-center gap-1.5 rounded-xl border border-night-800/15 bg-night-950/5 p-1">
               <button
                 onClick={() => decrement(key)}
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-lg font-bold text-maroon-800 hover:bg-white"
+                className="flex h-8 w-8 items-center justify-center rounded-lg text-lg font-bold text-night-800 hover:bg-white"
                 aria-label="Decrease quantity"
               >
                 −
@@ -79,25 +79,25 @@ export default function CartPage() {
                 min={0}
                 value={qty}
                 onChange={(e) => setQty(key, Math.max(0, Number(e.target.value) || 0))}
-                className="w-8 bg-transparent text-center text-sm font-semibold text-maroon-950 outline-none"
+                className="w-8 bg-transparent text-center text-sm font-semibold text-night-950 outline-none"
               />
               <button
                 onClick={() => increment(key)}
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-lg font-bold text-maroon-800 hover:bg-white"
+                className="flex h-8 w-8 items-center justify-center rounded-lg text-lg font-bold text-night-800 hover:bg-white"
                 aria-label="Increase quantity"
               >
                 +
               </button>
             </div>
 
-            <p className="w-16 shrink-0 text-right text-sm font-bold text-maroon-800">
+            <p className="w-16 shrink-0 text-right text-sm font-bold text-night-800">
               ₹{qty * product.offer}
             </p>
 
             <button
               onClick={() => remove(key)}
               aria-label="Remove item"
-              className="shrink-0 text-maroon-950/40 hover:text-maroon-700"
+              className="shrink-0 text-night-950/40 hover:text-night-700"
             >
               ✕
             </button>
@@ -105,16 +105,16 @@ export default function CartPage() {
         ))}
       </div>
 
-      <div className="mt-8 rounded-2xl border border-maroon-800/10 bg-white p-5 card-shadow sm:p-6">
-        <div className="flex items-center justify-between text-sm text-maroon-950/60">
+      <div className="mt-8 rounded-2xl border border-night-800/10 bg-white p-5 card-shadow sm:p-6">
+        <div className="flex items-center justify-between text-sm text-night-950/60">
           <span>MRP Total</span>
           <span className="line-through">₹{mrpTotal.toLocaleString("en-IN")}</span>
         </div>
-        <div className="mt-2 flex items-center justify-between text-lg font-bold text-maroon-950">
+        <div className="mt-2 flex items-center justify-between text-lg font-bold text-night-950">
           <span>Estimated Total</span>
           <span>₹{total.toLocaleString("en-IN")}</span>
         </div>
-        <p className="mt-1 text-xs text-maroon-950/50">Final pricing &amp; availability will be confirmed over WhatsApp / call.</p>
+        <p className="mt-1 text-xs text-night-950/50">Final pricing &amp; availability will be confirmed over WhatsApp / call.</p>
 
         <a
           href={`https://wa.me/${shopInfo.whatsapp}?text=${buildMessage()}`}
@@ -127,7 +127,7 @@ export default function CartPage() {
         </a>
         <Link
           href="/products"
-          className="mt-3 block text-center text-sm font-medium text-maroon-700 hover:text-maroon-800"
+          className="mt-3 block text-center text-sm font-medium text-night-700 hover:text-night-800"
         >
           + Add more items
         </Link>
