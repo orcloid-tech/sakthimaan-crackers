@@ -9,12 +9,19 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <div>
-      <div className="bg-night-950 py-8 text-center text-cream">
-        <h1 className="font-display text-3xl font-bold text-flame-gradient sm:text-4xl">Full Price List</h1>
-        <p className="font-tamil mt-2 text-sm text-flame-200/80">முழு விலைப் பட்டியல் — 90% தள்ளுபடி</p>
+    <div className="bg-[#08080a]">
+      <div className="border-b border-zinc-800 bg-[#0d0d12] py-10 text-center">
+        <span className="text-xs font-black tracking-widest text-amber-400 uppercase">
+          Direct Factory Wholesale Rates
+        </span>
+        <h1 className="font-display mt-2 text-3xl font-extrabold text-gold-gradient sm:text-5xl">
+          Full Price List
+        </h1>
+        <p className="font-tamil mt-2 text-sm text-amber-200/80">
+          முழு விலைப் பட்டியல் — 90% வரை தள்ளுபடி · சிவகாசி
+        </p>
       </div>
-      <Suspense fallback={<div className="py-20 text-center text-sm text-night-950/50">Loading price list…</div>}>
+      <Suspense fallback={<div className="py-24 text-center text-sm text-zinc-400">Loading price list…</div>}>
         <ProductsBrowser />
       </Suspense>
     </div>

@@ -5,6 +5,7 @@ import { CartProvider } from "@/lib/cart-context";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import SparklesBackground from "@/components/SparklesBackground";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -30,16 +31,21 @@ export const metadata: Metadata = {
     "Sakthi Maan Crackers - premium Deepavali crackers direct from Sivakasi. Flower pots, fancy fountains, sparklers, gift boxes & family combos at up to 90% off MRP. Wholesale & retail.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
       className={`${poppins.variable} ${playfair.variable} ${notoTamil.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[var(--background)]">
+      <body className="min-h-full flex flex-col bg-[#08080a] text-zinc-100 selection:bg-amber-400 selection:text-black">
         <CartProvider>
+          <SparklesBackground />
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="relative z-10 flex-1">{children}</main>
           <Footer />
           <WhatsAppFloat />
         </CartProvider>

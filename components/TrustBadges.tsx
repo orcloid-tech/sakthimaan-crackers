@@ -4,39 +4,52 @@ const badges = [
   {
     icon: TagIcon,
     title: "Up to 90% Off MRP",
-    desc: "Direct factory-linked pricing on every category, no middlemen.",
+    titleTa: "90% வரை தள்ளுபடி",
+    desc: "Direct factory-linked wholesale pricing on every single cracker category.",
   },
   {
     icon: ShieldIcon,
     title: "Tested & Certified",
-    desc: "Quality checked crackers sourced straight from Sivakasi.",
+    titleTa: "100% தரமான வெடிகள்",
+    desc: "Strictly quality-checked authentic crackers sourced directly from Sivakasi.",
   },
   {
     icon: TruckIcon,
     title: "Wholesale & Retail",
-    desc: "Bulk orders for events, and small packs for family celebrations.",
+    titleTa: "மொத்த & சில்லறை",
+    desc: "Bulk event packages, temple festivals & family celebration combo packs.",
   },
   {
     icon: SparkleIcon,
     title: "180+ Varieties",
-    desc: "From sparklers to fancy fountains — everything under one roof.",
+    titleTa: "180+ ரகங்கள்",
+    desc: "From sparklers to 240-shot multi-color sky fireworks under one roof.",
   },
 ];
 
 export default function TrustBadges() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-        {badges.map(({ icon: Icon, title, desc }) => (
+    <section className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {badges.map(({ icon: Icon, title, titleTa, desc }) => (
           <div
             key={title}
-            className="rounded-2xl border border-night-800/10 bg-white p-4 card-shadow sm:p-5"
+            className="group rounded-2xl border border-zinc-800/80 bg-[#121217]/80 p-5 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(250,204,21,0.12)]"
           >
-            <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-night-800/10 text-night-800">
-              <Icon className="h-5 w-5" />
-            </span>
-            <p className="text-sm font-semibold text-night-950">{title}</p>
-            <p className="mt-1 text-xs leading-relaxed text-night-950/60">{desc}</p>
+            <div className="mb-3 flex items-center justify-between">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 transition-transform group-hover:scale-110">
+                <Icon className="h-5 w-5" />
+              </span>
+              <span className="font-tamil text-[11px] text-amber-300/80">
+                {titleTa}
+              </span>
+            </div>
+            <p className="text-sm font-bold tracking-wide text-zinc-100 uppercase transition-colors group-hover:text-amber-300">
+              {title}
+            </p>
+            <p className="mt-1.5 text-xs leading-relaxed text-zinc-400">
+              {desc}
+            </p>
           </div>
         ))}
       </div>

@@ -59,24 +59,37 @@ const categoryIcon: Record<string, ComponentType<{ className?: string }>> = {
 
 export default function CategoryShowcase() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6" id="categories">
-      <div className="mb-8 text-center">
-        <h2 className="font-display text-3xl font-bold text-night-950">Shop by Category</h2>
-        <p className="font-tamil mt-2 text-sm text-night-700/70">வகைவகையான கிராக்கர்ஸ் ஒரே இடத்தில்</p>
+    <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6" id="categories">
+      <div className="mb-10 text-center">
+        <h2 className="text-xs font-black tracking-widest text-gold-gradient uppercase sm:text-sm">
+          Browse by Category
+        </h2>
+        <p className="font-display mt-2 text-2xl font-extrabold tracking-tight text-zinc-100 sm:text-4xl">
+          Complete Crackers Range
+        </p>
+        <p className="font-tamil mt-1 text-sm text-amber-200/80">
+          வகைவகையான கிராக்கர்ஸ் ஒரே இடத்தில் — 27 பிரிவுகள்
+        </p>
       </div>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7">
         {categories.map((c) => {
           const Icon = categoryIcon[c.slug] ?? SparkleIcon;
           return (
             <Link
               key={c.slug}
               href={`/products?cat=${c.slug}`}
-              className="group flex flex-col items-center gap-2 rounded-2xl border border-night-800/10 bg-white p-4 text-center card-shadow transition-all hover:-translate-y-0.5 hover:border-flame-500/50"
+              className="group flex flex-col items-center gap-2.5 rounded-2xl border border-zinc-800/80 bg-[#121217]/90 p-4 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:bg-[#181822] hover:shadow-[0_0_20px_rgba(250,204,21,0.15)]"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-night-800/8 to-flame-500/15 text-night-800 transition-transform group-hover:scale-110 group-hover:text-night-700">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-amber-400/20 bg-amber-400/10 text-amber-300 transition-all duration-300 group-hover:scale-110 group-hover:border-amber-400 group-hover:bg-amber-400/20 group-hover:shadow-[0_0_12px_rgba(250,204,21,0.4)]">
                 <Icon className="h-6 w-6" />
               </span>
-              <span className="text-xs font-semibold leading-snug text-night-950">{c.title}</span>
+              <span className="text-xs font-bold leading-tight tracking-wide text-zinc-200 transition-colors group-hover:text-amber-300">
+                {c.title}
+              </span>
+              <span className="font-tamil text-[10px] text-zinc-400 line-clamp-1">
+                {c.titleTa}
+              </span>
             </Link>
           );
         })}
